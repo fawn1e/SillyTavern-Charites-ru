@@ -35,7 +35,7 @@ const OLD_TOP_ICONS = [
     { id: 'fa-font', name: 'AI格式化', selector: '.drawer-icon.fa-font', fa: 'fa-solid fa-font' },
     { id: 'fa-book-atlas', name: '世界信息', selector: '.drawer-icon.fa-book-atlas', fa: 'fa-solid fa-book-atlas' },
     { id: 'fa-user', name: '用户设置', selector: '.drawer-icon.fa-fw', fa: 'fa-solid fa-user' },
-    { id: 'fa-image', name: '背景图', selector: '.drawer-icon.fa-cubes', fa: 'fa-solid fa-image' },
+    { id: 'fa-image', name: '背景图', selector: '.drawer-icon.fa-fw', fa: 'fa-solid fa-image' },
     { id: 'fa-cubes', name: '扩展', selector: '.drawer-icon.fa-cubes', fa: 'fa-solid fa-cubes' },
     { id: 'fa-bars-progress', name: '数据管理', selector: '.drawer-icon.fa-bars-progress', fa: 'fa-solid fa-bars-progress' },
     { id: 'fa-face-smile', name: '角色管理', selector: '.drawer-icon.fa-face-smile', fa: 'fa-solid fa-face-smile' },
