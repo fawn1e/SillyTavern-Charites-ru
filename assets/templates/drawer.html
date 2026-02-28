@@ -1,0 +1,345 @@
+<div id="charites_drawer" class="drawer">
+    <div class="drawer-toggle">
+        <div id="charites_drawer_icon" class="drawer-icon fa-solid fa-palette fa-fw closedIcon interactable" title="Charites 美化工坊" tabindex="0"></div>
+    </div>
+    <div id="charites_drawer_content" class="drawer-content closedDrawer">
+        <div class="cht-panel">
+
+            <div class="cht-header">
+                <span class="cht-title"><i class="fa-solid fa-palette"></i> Charites 美化工坊</span>
+                <span class="cht-version">v1.0.0</span>
+                <div class="cht-header-actions">
+                    <button id="cht-toggle-preview" class="cht-icon-btn active" title="启用/禁用预览"><i class="fa-solid fa-eye"></i></button>
+                    <button id="cht-reset-all" class="cht-icon-btn" title="重置"><i class="fa-solid fa-rotate-left"></i></button>
+                </div>
+            </div>
+
+            <div class="cht-tabs">
+                <button class="cht-tab active" data-tab="colors"><i class="fa-solid fa-droplet"></i> 配色</button>
+                <button class="cht-tab" data-tab="avatar"><i class="fa-solid fa-circle-user"></i> 头像</button>
+                <button class="cht-tab" data-tab="background"><i class="fa-solid fa-image"></i> 背景</button>
+                <button class="cht-tab" data-tab="typography"><i class="fa-solid fa-font"></i> 字体</button>
+                <button class="cht-tab" data-tab="icons"><i class="fa-solid fa-icons"></i> 图标</button>
+                <button class="cht-tab" data-tab="layout"><i class="fa-solid fa-table-columns"></i> 布局</button>
+                <button class="cht-tab" data-tab="effects"><i class="fa-solid fa-wand-magic-sparkles"></i> 特效</button>
+                <button class="cht-tab" data-tab="themes"><i class="fa-solid fa-floppy-disk"></i> 主题</button>
+            </div>
+
+            <!-- ======== 配色 ======== -->
+            <div class="cht-tab-content active" data-panel="colors">
+                <div class="cht-section-title">快速调色</div>
+                <div class="cht-field"><span class="cht-label">主题色相</span><div class="cht-hue-bar" id="cht-hue-bar"><div class="cht-hue-ind" id="cht-hue-ind"></div></div></div>
+                <div class="cht-field"><span class="cht-label">饱和度 <em id="cht-sat-v">70</em>%</span><input type="range" class="cht-slider" id="cht-sat" min="10" max="100" value="70"></div>
+                <div class="cht-field"><span class="cht-label">亮度 <em id="cht-cl-v">50</em></span><input type="range" class="cht-slider" id="cht-cl" min="15" max="85" value="50"></div>
+                <div class="cht-field"><span class="cht-label">日夜模式 <em id="cht-bri-v">夜</em></span><input type="range" class="cht-slider cht-daynight" id="cht-bri" min="0" max="100" value="25"><button id="cht-lock-daynight" class="cht-lock-btn" title="锁定"><i class="fa-solid fa-lock-open"></i></button></div>
+                <div class="cht-field"><span class="cht-label">强调色</span><div class="cht-color-row"><input type="color" id="cht-accent" value="#f59e0b" class="cht-cpick"><span class="cht-hex" id="cht-accent-hex">#f59e0b</span></div></div>
+                <div class="cht-swatches" id="cht-swatches"></div>
+                <div class="cht-section-title cht-toggle" id="cht-fine-toggle"><i class="fa-solid fa-sliders"></i> 精细调色 <i class="fa-solid fa-chevron-down cht-arrow"></i></div>
+                <div id="cht-fine-body" style="display:none;"></div>
+
+                <div class="cht-section-title">气泡透明度</div>
+                <div class="cht-field"><span class="cht-label">USER气泡透明度 <em>70</em>%</span><input type="range" class="cht-slider" min="0" max="100" value="70" data-s="userBubbleOpacity"></div>
+                <div class="cht-field"><span class="cht-label">CHAR气泡透明度 <em>20</em>%</span><input type="range" class="cht-slider" min="0" max="100" value="20" data-s="botBubbleOpacity"></div>
+                <p class="cht-hint">两条透明度独立控制，互不影响。</p>
+
+                <div class="cht-section-title">气泡渐变</div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="bubbleGradient"> 启用渐变色气泡</label></div>
+
+                <div class="cht-section-title" style="font-size:12px;margin-top:6px;">USER渐变</div>
+                <div class="cht-field"><span class="cht-label">渐变角度 <em>180</em>°</span><input type="range" class="cht-slider" min="0" max="360" value="180" data-s="bubbleGradientAngle"></div>
+                <div class="cht-field"><span class="cht-label">主色</span><div class="cht-color-row"><input type="color" data-s="userBubbleColor1" value="#4a90d9" class="cht-cpick"><span class="cht-hex">#4a90d9</span></div></div>
+                <div class="cht-field"><span class="cht-label">配色</span><div class="cht-color-row"><input type="color" data-s="userBubbleColor2" value="#6c5ce7" class="cht-cpick"><span class="cht-hex">#6c5ce7</span></div></div>
+
+                <div class="cht-section-title" style="font-size:12px;margin-top:6px;">CHAR渐变</div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="charFollowUserBubble"> CHAR跟随USER渐变</label></div>
+                <div class="cht-field"><span class="cht-label">渐变角度 <em>180</em>°</span><input type="range" class="cht-slider" min="0" max="360" value="180" data-s="charBubbleGradientAngle"></div>
+                <div class="cht-field"><span class="cht-label">主色</span><div class="cht-color-row"><input type="color" data-s="charBubbleColor1" value="#6c5ce7" class="cht-cpick"><span class="cht-hex">#6c5ce7</span></div></div>
+                <div class="cht-field"><span class="cht-label">配色</span><div class="cht-color-row"><input type="color" data-s="botBubbleColor2" value="#4a90d9" class="cht-cpick"><span class="cht-hex">#4a90d9</span></div></div>
+                <p class="cht-hint">勾选「CHAR跟随USER」后，CHAR使用USER的渐变设置（角度/主色/配色）。透明度始终独立。</p>
+            </div>
+
+            <!-- ======== 头像 ======== -->
+            <div class="cht-tab-content" data-panel="avatar">
+                <div class="cht-section-title">头像形状</div>
+                <div class="cht-opt-group">
+                    <button class="cht-opt-btn active" data-setting="avatarShape" data-val="circle"><i class="fa-solid fa-circle"></i> 圆形</button>
+                    <button class="cht-opt-btn" data-setting="avatarShape" data-val="square"><i class="fa-solid fa-square"></i> 方形</button>
+                </div>
+                <div class="cht-field"><span class="cht-label">圆角 <em>50</em>%</span><input type="range" class="cht-slider" id="cht-avatar-radius" min="0" max="50" value="50" data-s="avatarBorderRadius"></div>
+                <div class="cht-section-title">头像框</div>
+                <div class="cht-field"><span class="cht-label">框图URL</span><input type="text" placeholder="https://files.catbox.moe/..." data-s="avatarFrameUrl"></div>
+                <div class="cht-field"><span class="cht-label">框缩放 <em>130</em>%</span><input type="range" class="cht-slider" min="100" max="250" value="130" data-s="avatarFrameScale"></div>
+                <div class="cht-section-title">头像位置</div>
+                <div class="cht-opt-group">
+                    <button class="cht-opt-btn active" data-setting="avatarPosition" data-val="default">默认</button>
+                    <button class="cht-opt-btn" data-setting="avatarPosition" data-val="topLeft">顶左</button>
+                    <button class="cht-opt-btn" data-setting="avatarPosition" data-val="topCenter">顶中</button>
+                    <button class="cht-opt-btn" data-setting="avatarPosition" data-val="hidden">隐藏</button>
+                </div>
+                <div class="cht-field"><span class="cht-label">头像大小 <em>50</em>px</span><input type="range" class="cht-slider" min="30" max="150" value="50" data-s="avatarSize"></div>
+                <div class="cht-section-title">头像偏移（坐标微调）</div>
+                <div class="cht-field"><span class="cht-label">头像水平偏移 <em>0</em>px</span><input type="range" class="cht-slider" min="-200" max="200" value="0" data-s="avatarOffsetX"></div>
+                <div class="cht-field"><span class="cht-label">头像垂直偏移 <em>0</em>px</span><input type="range" class="cht-slider" min="-200" max="200" value="0" data-s="avatarOffsetY"></div>
+                <div class="cht-section-title">名字位置</div>
+                <div class="cht-opt-group">
+                    <button class="cht-opt-btn active" data-setting="namePosition" data-val="follow">跟随头像</button>
+                    <button class="cht-opt-btn" data-setting="namePosition" data-val="default">保持原位</button>
+                </div>
+                <p class="cht-hint">「跟随头像」：选择顶左/顶中时，名字、楼层、秒数、字数统计都跟着移动并排列在头像下方。「保持原位」：名字保持默认位置。</p>
+                <div class="cht-section-title">名字偏移（坐标微调）</div>
+                <div class="cht-field"><span class="cht-label">名字水平偏移 <em>0</em>px</span><input type="range" class="cht-slider" min="-200" max="200" value="0" data-s="nameOffsetX"></div>
+                <div class="cht-field"><span class="cht-label">名字垂直偏移 <em>0</em>px</span><input type="range" class="cht-slider" min="-200" max="200" value="0" data-s="nameOffsetY"></div>
+                <div class="cht-section-title">发送时间位置</div>
+                <div class="cht-opt-group">
+                    <button class="cht-opt-btn active" data-setting="timestampPosition" data-val="default">默认(名字旁)</button>
+                    <button class="cht-opt-btn" data-setting="timestampPosition" data-val="belowName">名字下方</button>
+                    <button class="cht-opt-btn" data-setting="timestampPosition" data-val="rightOfName">置右</button>
+                </div>
+                <div class="cht-field"><span class="cht-label">时间戳水平偏移 <em>0</em>px</span><input type="range" class="cht-slider" min="-200" max="200" value="0" data-s="timestampOffsetX"></div>
+                <div class="cht-field"><span class="cht-label">时间戳垂直偏移 <em>0</em>px</span><input type="range" class="cht-slider" min="-200" max="200" value="0" data-s="timestampOffsetY"></div>
+                <p class="cht-hint">发送时间(日期)不随头像移动。「默认」保持原始位置，「名字下方/右方」移动到名字附近。坐标可微调。</p>
+            </div>
+
+            <!-- ======== 背景 ======== -->
+            <div class="cht-tab-content" data-panel="background">
+                <div class="cht-section-title">聊天区域背景</div>
+                <div class="cht-img-group"><div class="cht-img-label">背景图片</div><input type="text" placeholder="输入图片URL..." data-s="chatBgUrl"><div class="cht-img-ctrl"><span>可见度 <em>100</em>%</span><input type="range" class="cht-slider" min="5" max="100" value="100" data-s="chatBgOpacity"></div></div>
+                <div class="cht-section-title">消息气泡顶部图</div>
+                <div class="cht-img-group"><div class="cht-img-label">通用气泡图</div><input type="text" placeholder="输入图片URL..." data-s="mesBubbleImgUrl"></div>
+                <div class="cht-img-group"><div class="cht-img-label">用户气泡图</div><input type="text" placeholder="留空使用通用" data-s="userBubbleImgUrl"></div>
+                <div class="cht-img-group"><div class="cht-img-label">AI气泡图</div><input type="text" placeholder="留空使用通用" data-s="botBubbleImgUrl"></div>
+                <div class="cht-field"><span class="cht-label">图高 <em>130</em>px</span><input type="range" class="cht-slider" min="0" max="300" value="130" data-s="mesBubbleImgHeight"></div>
+                <div class="cht-section-title">顶栏/容器/侧边栏</div>
+                <div class="cht-img-group"><div class="cht-img-label">顶栏背景图</div><input type="text" placeholder="输入图片URL..." data-s="topBarBgUrl"></div>
+                <div class="cht-img-group"><div class="cht-img-label">图标容器背景图</div><input type="text" placeholder="输入图片URL..." data-s="containerBgUrl"></div>
+                <div class="cht-img-group"><div class="cht-img-label">侧边栏背景图</div><input type="text" placeholder="输入图片URL..." data-s="sidebarBgUrl"></div>
+            </div>
+
+            <!-- ======== 字体 ======== -->
+            <div class="cht-tab-content" data-panel="typography">
+                <div class="cht-section-title">正文字体</div>
+                <div class="cht-field"><span class="cht-label">字体名称</span><input type="text" placeholder='如 "Microsoft YaHei"' data-s="fontFamily"></div>
+                <div class="cht-field"><span class="cht-label">@import</span><input type="text" placeholder="字体导入URL" data-s="fontImportUrl"></div>
+                <div class="cht-field"><span class="cht-label">字号 <em>1.0</em>x</span><input type="range" class="cht-slider" min="70" max="150" value="100" data-s="fontScale"></div>
+                <div class="cht-field"><span class="cht-label">行高 <em>1.6</em></span><input type="range" class="cht-slider" min="120" max="300" value="160" data-s="lineHeight"></div>
+
+                <div class="cht-section-title">名字字体</div>
+                <div class="cht-field"><span class="cht-label">USER名字体</span><input type="text" placeholder='如 "cursive"' data-s="userNameFont"></div>
+                <div class="cht-field"><span class="cht-label">USER字体导入</span><input type="text" placeholder="@import URL" data-s="userNameFontImport"></div>
+                <div class="cht-field"><span class="cht-label">角色名字体</span><input type="text" placeholder='如 "serif"' data-s="charNameFont"></div>
+                <div class="cht-field"><span class="cht-label">角色字体导入</span><input type="text" placeholder="@import URL" data-s="charNameFontImport"></div>
+                <div class="cht-field"><span class="cht-label">名字大小 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="40" value="0" data-s="nameFontSize"></div>
+                <p class="cht-hint">名字大小为0时使用默认大小。</p>
+
+                <div class="cht-section-title">USER名字渐变色</div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="userNameGradient"> 启用USER名字渐变</label></div>
+                <div class="cht-field"><span class="cht-label">渐变色1</span><div class="cht-color-row"><input type="color" data-s="userNameGradientColor1" value="#8b5cf6" class="cht-cpick"><span class="cht-hex">#8b5cf6</span></div></div>
+                <div class="cht-field"><span class="cht-label">渐变色2</span><div class="cht-color-row"><input type="color" data-s="userNameGradientColor2" value="#f59e0b" class="cht-cpick"><span class="cht-hex">#f59e0b</span></div></div>
+                <div class="cht-field"><span class="cht-label">渐变角度 <em>180</em>°</span><input type="range" class="cht-slider" min="0" max="360" value="180" data-s="userNameGradientAngle"></div>
+
+                <div class="cht-section-title">CHAR名字渐变色</div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="charFollowUserName"> CHAR跟随USER名字样式</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="charNameGradient"> 启用CHAR名字渐变</label></div>
+                <div class="cht-field"><span class="cht-label">渐变色1</span><div class="cht-color-row"><input type="color" data-s="charNameGradientColor1" value="#ec4899" class="cht-cpick"><span class="cht-hex">#ec4899</span></div></div>
+                <div class="cht-field"><span class="cht-label">渐变色2</span><div class="cht-color-row"><input type="color" data-s="charNameGradientColor2" value="#8b5cf6" class="cht-cpick"><span class="cht-hex">#8b5cf6</span></div></div>
+                <div class="cht-field"><span class="cht-label">渐变角度 <em>180</em>°</span><input type="range" class="cht-slider" min="0" max="360" value="180" data-s="charNameGradientAngle"></div>
+                <p class="cht-hint">勾选「跟随USER」后，CHAR独立设置无效，使用USER的渐变色。</p>
+
+                <div class="cht-section-title">名字特效</div>
+                <div class="cht-field"><span class="cht-label">描边粗细 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="3" step="0.1" value="0" data-s="nameStrokeWidth"></div>
+                <div class="cht-field"><span class="cht-label">描边颜色</span><div class="cht-color-row"><input type="color" data-s="nameStrokeColor" value="#000000" class="cht-cpick"><span class="cht-hex">#000000</span></div></div>
+                <div class="cht-field"><span class="cht-label">阴影水平 <em>0</em>px</span><input type="range" class="cht-slider" min="-20" max="20" value="0" data-s="nameShadowX"></div>
+                <div class="cht-field"><span class="cht-label">阴影垂直 <em>0</em>px</span><input type="range" class="cht-slider" min="-20" max="20" value="0" data-s="nameShadowY"></div>
+                <div class="cht-field"><span class="cht-label">阴影模糊 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="30" value="0" data-s="nameShadowBlur"></div>
+                <div class="cht-field"><span class="cht-label">阴影颜色</span><div class="cht-color-row"><input type="color" data-s="nameShadowColor" value="#000000" class="cht-cpick"><span class="cht-hex">#000000</span></div></div>
+                <div class="cht-field"><span class="cht-label">发光大小 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="30" value="0" data-s="nameGlowSize"></div>
+                <div class="cht-field"><span class="cht-label">发光颜色</span><div class="cht-color-row"><input type="color" data-s="nameGlowColor" value="#ffffff" class="cht-cpick"><span class="cht-hex">#ffffff</span></div></div>
+                <p class="cht-hint">描边=文字边框，阴影=投影效果，发光=外发光。特效同时应用到USER和CHAR名字。</p>
+
+                <div class="cht-section-title">文字效果</div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="textJustify"> 两端对齐</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="emDashedBorder"> 斜体虚线边框</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="qDashedUnderline"> 引用底部虚线</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="hideBrAtStart"> 隐藏消息开头空行</label></div>
+
+                <div class="cht-section-title">思维链</div>
+                <div class="cht-field"><span class="cht-label">生成中文字</span><input type="text" placeholder="如 Processing..." data-s="thinkingText"></div>
+                <div class="cht-field"><span class="cht-label">完成分割线图</span><input type="text" placeholder="图片URL" data-s="thinkingDoneImgUrl"></div>
+                <div class="cht-section-title">气泡底部装饰</div>
+                <div class="cht-field"><span class="cht-label">装饰文字</span><input type="text" placeholder="如 ─── Theme ───" data-s="mesAfterText"></div>
+            </div>
+
+            <!-- ======== 图标 ======== -->
+            <div class="cht-tab-content" data-panel="icons">
+                <div class="cht-section-title">图标样式</div>
+                <div class="cht-field"><span class="cht-label">图标大小 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="40" value="0" data-s="topIconSize"></div>
+                <div class="cht-field"><span class="cht-label">图标颜色</span><div class="cht-color-row"><input type="color" data-s="topIconColor" value="#ffffff" class="cht-cpick"><span class="cht-hex">#ffffff</span></div></div>
+                <div class="cht-field"><span class="cht-label">图标透明度 <em>0</em>%</span><input type="range" class="cht-slider" min="0" max="100" value="0" data-s="topIconOpacity"></div>
+                <p class="cht-hint">图标大小为0时使用默认大小。透明度0=不透明，100=全透明。</p>
+
+                <div class="cht-section-title">新版图标 (1.15+)</div><div id="cht-icons-new" class="cht-icon-list"></div>
+                <div class="cht-section-title">旧版图标 (1.12-1.14)</div><div id="cht-icons-old" class="cht-icon-list"></div>
+                <div class="cht-section-title">底栏图标</div><div id="cht-icons-bottom" class="cht-icon-list"></div>
+                <div class="cht-section-title">自定义图标</div><div id="cht-icons-custom" class="cht-icon-list"></div>
+                <button id="cht-add-custom-icon" class="cht-btn cht-btn-outline" style="margin-top:8px;width:100%;"><i class="fa-solid fa-plus"></i> 添加自定义图标</button>
+                <div class="cht-section-title">图标Hover效果</div>
+                <div class="cht-field"><span class="cht-label">全局hover图</span><input type="text" placeholder="鼠标悬停时显示的图片URL" data-s="iconHoverAllUrl"></div>
+                <p class="cht-hint">设置后，所有顶栏图标hover时显示该图片（如绽放的玫瑰）。导入ST美化时自动提取。也可在「自定义CSS」中为单个图标设置不同的hover效果。</p>
+            </div>
+
+            <!-- ======== 布局 ======== -->
+            <div class="cht-tab-content" data-panel="layout">
+                <div class="cht-section-title">聊天宽度</div>
+                <div class="cht-field"><span class="cht-label">宽度 <em>55</em>%</span><input type="range" class="cht-slider" min="30" max="100" value="55" data-s="chatWidth"></div>
+                <div class="cht-section-title">气泡样式</div>
+                <div class="cht-field"><span class="cht-label">气泡圆角 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="30" value="0" data-s="bubbleBorderRadius"></div>
+                <div class="cht-field"><span class="cht-label">气泡间距 <em>10</em>px</span><input type="range" class="cht-slider" min="0" max="100" value="10" data-s="bubbleGap"></div>
+                <div class="cht-field"><span class="cht-label">USER气泡宽度 <em>100</em>%</span><input type="range" class="cht-slider" min="30" max="100" value="100" data-s="userBubbleWidth"></div>
+                <div class="cht-field"><span class="cht-label">USER气泡边距 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="50" value="0" data-s="userBubbleMarginH"></div>
+                <div class="cht-field"><span class="cht-label">USER气泡对齐</span></div>
+                <div class="cht-opt-group">
+                    <button class="cht-opt-btn active" data-setting="userBubbleAlign" data-val="default">默认</button>
+                    <button class="cht-opt-btn" data-setting="userBubbleAlign" data-val="left">靠左</button>
+                    <button class="cht-opt-btn" data-setting="userBubbleAlign" data-val="center">居中</button>
+                    <button class="cht-opt-btn" data-setting="userBubbleAlign" data-val="right">靠右</button>
+                </div>
+                <div class="cht-field"><span class="cht-label">CHAR气泡宽度 <em>100</em>%</span><input type="range" class="cht-slider" min="30" max="100" value="100" data-s="charBubbleWidth"></div>
+                <div class="cht-field"><span class="cht-label">CHAR气泡边距 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="50" value="0" data-s="charBubbleMarginH"></div>
+                <div class="cht-field"><span class="cht-label">CHAR气泡对齐</span></div>
+                <div class="cht-opt-group">
+                    <button class="cht-opt-btn active" data-setting="charBubbleAlign" data-val="default">默认</button>
+                    <button class="cht-opt-btn" data-setting="charBubbleAlign" data-val="left">靠左</button>
+                    <button class="cht-opt-btn" data-setting="charBubbleAlign" data-val="center">居中</button>
+                    <button class="cht-opt-btn" data-setting="charBubbleAlign" data-val="right">靠右</button>
+                </div>
+                <p class="cht-hint">设置USER/CHAR气泡不同宽度和对齐方式可实现类似聊天软件的分离效果。配合「聊天区背景色」设为透明效果更佳。</p>
+                <div class="cht-section-title">侧边栏宽度</div>
+                <div class="cht-opt-group"><button class="cht-opt-btn" data-setting="sidebarWidth" data-val="narrow">窄版</button><button class="cht-opt-btn active" data-setting="sidebarWidth" data-val="normal">标准</button><button class="cht-opt-btn" data-setting="sidebarWidth" data-val="wide">宽版</button></div>
+                <div class="cht-section-title">顶栏/底栏/容器背景色</div>
+                <div class="cht-bar-color" data-target="topBarElBgColor">
+                    <span class="cht-label">顶部栏背景</span>
+                    <div class="cht-bar-color-row"><input type="color" class="cht-bar-cpick" value="#000000"><span class="cht-bar-alpha-label">透明度 <span class="cht-bar-alpha-v">100</span>%</span><input type="range" class="cht-bar-alpha cht-slider" min="0" max="100" value="100"></div>
+                </div>
+                <div class="cht-bar-color" data-target="topBarBgColor">
+                    <span class="cht-label">图标容器背景</span>
+                    <div class="cht-bar-color-row"><input type="color" class="cht-bar-cpick" value="#000000"><span class="cht-bar-alpha-label">透明度 <span class="cht-bar-alpha-v">100</span>%</span><input type="range" class="cht-bar-alpha cht-slider" min="0" max="100" value="100"></div>
+                </div>
+                <div class="cht-bar-color" data-target="sendFormBgColor">
+                    <span class="cht-label">底栏背景色</span>
+                    <div class="cht-bar-color-row"><input type="color" class="cht-bar-cpick" value="#000000"><span class="cht-bar-alpha-label">透明度 <span class="cht-bar-alpha-v">100</span>%</span><input type="range" class="cht-bar-alpha cht-slider" min="0" max="100" value="100"></div>
+                </div>
+                <div class="cht-bar-color" data-target="chatContainerBg">
+                    <span class="cht-label">聊天区背景色</span>
+                    <div class="cht-bar-color-row"><input type="color" class="cht-bar-cpick" value="#000000"><span class="cht-bar-alpha-label">透明度 <span class="cht-bar-alpha-v">100</span>%</span><input type="range" class="cht-bar-alpha cht-slider" min="0" max="100" value="100"></div>
+                </div>
+                <p class="cht-hint">透明度0%=不透明，100%=全透明。「顶部栏背景」控制整个顶栏区域，「图标容器背景」可单独覆盖图标行。</p>
+                <div class="cht-section-title">底部输入栏</div>
+                <div class="cht-field"><span class="cht-label">圆角 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="30" value="0" data-s="sendFormRadius"></div>
+                <div class="cht-field"><span class="cht-label">底栏背景图</span><input type="text" placeholder="输入图片URL..." data-s="sendFormBgUrl"></div>
+                <div class="cht-section-title">强调色边框</div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="mesBorder"> 消息气泡边框</label></div>
+                <div class="cht-field"><span class="cht-label">边框颜色</span><div class="cht-color-row"><input type="color" data-s="mesBorderColor" value="#8b5cf6" class="cht-cpick"><span class="cht-hex">#8b5cf6</span></div></div>
+                <div class="cht-field"><span class="cht-label">边框宽度 <em>1</em>px</span><input type="range" class="cht-slider" min="1" max="5" value="1" data-s="mesBorderWidth"></div>
+                <div class="cht-field"><span class="cht-label">消息圆角 <em>8</em>px</span><input type="range" class="cht-slider" min="0" max="30" value="8" data-s="mesBorderRadius"></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="quoteBorderLeft"> 引用左边框</label></div>
+                <div class="cht-field"><span class="cht-label">引用边框色</span><div class="cht-color-row"><input type="color" data-s="quoteBorderColor" value="#f59e0b" class="cht-cpick"><span class="cht-hex">#f59e0b</span></div></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="codeBorder"> 代码块边框</label></div>
+                <div class="cht-field"><span class="cht-label">代码边框色</span><div class="cht-color-row"><input type="color" data-s="codeBorderColor" value="#8b5cf6" class="cht-cpick"><span class="cht-hex">#8b5cf6</span></div></div>
+                <div class="cht-section-title">弹窗样式</div>
+                <div class="cht-field"><span class="cht-label">弹窗背景色</span><div class="cht-color-row"><input type="color" data-s="popupBg" value="#1e1e28" class="cht-cpick"><span class="cht-hex">#1e1e28</span></div></div>
+                <div class="cht-field"><span class="cht-label">弹窗圆角 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="30" value="0" data-s="popupRadius"></div>
+                <div class="cht-field"><span class="cht-label">弹窗边框色</span><div class="cht-color-row"><input type="color" data-s="popupBorder" value="#8b5cf6" class="cht-cpick"><span class="cht-hex">#8b5cf6</span></div></div>
+                <div class="cht-field"><span class="cht-label">弹窗模糊 <em>0</em>px</span><input type="range" class="cht-slider" min="0" max="30" value="0" data-s="popupBlur"></div>
+                <div class="cht-section-title">占位文字</div>
+                <div class="cht-field"><span class="cht-label">占位文字</span><input type="text" placeholder="如 .. 𖥧 𖧧 ˒˒.." data-s="sendPlaceholder"></div>
+                <div class="cht-section-title">常用CSS片段</div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="snippetHideScrollbar"> 隐藏滚动条</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="snippetNoButtonShadow"> 去按钮阴影</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="snippetTransparentInputBg"> 输入框去黑块</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="snippetNoTopBarShadow"> 顶栏去阴影</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="snippetQrHideOnBlur"> QR隐藏</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="snippetNoHoverHighlight"> 去hover高亮</label></div>
+                <div class="cht-check-row"><label><input type="checkbox" data-s="snippetIconAlwaysOn"> 图标常亮</label></div>
+                <div class="cht-section-title">自定义CSS（高级）</div>
+                <textarea id="cht-custom-css" class="cht-textarea" rows="8" placeholder="额外的CSS..."></textarea>
+            </div>
+
+            <!-- ======== 特效 ======== -->
+            <div class="cht-tab-content" data-panel="effects">
+                <div class="cht-section-title"><i class="fa-solid fa-snowflake"></i> 飘落特效</div>
+                <div class="cht-opt-group">
+                    <button class="cht-opt-btn active" data-setting="particleEffect" data-val="none">关闭</button>
+                    <button class="cht-opt-btn" data-setting="particleEffect" data-val="snow">雪花</button>
+                    <button class="cht-opt-btn" data-setting="particleEffect" data-val="petals">花瓣</button>
+                    <button class="cht-opt-btn" data-setting="particleEffect" data-val="stars">星星</button>
+                </div>
+                <div class="cht-field"><span class="cht-label">飘落层级</span></div>
+                <div class="cht-opt-group">
+                    <button class="cht-opt-btn active" data-setting="particleLayer" data-val="global">全局（最前）</button>
+                    <button class="cht-opt-btn" data-setting="particleLayer" data-val="background">气泡后方</button>
+                </div>
+                <p class="cht-hint">全局：粒子在所有内容最前方。气泡后方：全屏飘落但经过气泡时被气泡遮住，不影响阅读。</p>
+                <div class="cht-field"><span class="cht-label">数量 <em>30</em></span><input type="range" class="cht-slider" min="5" max="150" value="30" data-s="particleCount"></div>
+                <div class="cht-field"><span class="cht-label">大小 <em>5</em>px</span><input type="range" class="cht-slider" min="2" max="15" value="5" data-s="particleSize"></div>
+                <div class="cht-field"><span class="cht-label">速度 <em>3</em></span><input type="range" class="cht-slider" min="1" max="10" value="3" data-s="particleSpeed"></div>
+                <div class="cht-field"><span class="cht-label">颜色</span><div class="cht-color-row"><input type="color" data-s="particleColor" value="#ffffff" class="cht-cpick"><span class="cht-hex">#ffffff</span></div></div>
+
+                <div class="cht-section-title"><i class="fa-solid fa-arrow-pointer"></i> 鼠标特效</div>
+                <div class="cht-opt-group">
+                    <button class="cht-opt-btn active" data-setting="mouseEffect" data-val="none">关闭</button>
+                    <button class="cht-opt-btn" data-setting="mouseEffect" data-val="trail">粒子拖尾</button>
+                    <button class="cht-opt-btn" data-setting="mouseEffect" data-val="ripple">点击涟漪</button>
+                    <button class="cht-opt-btn" data-setting="mouseEffect" data-val="glow">光晕跟随</button>
+                </div>
+                <div class="cht-field"><span class="cht-label">颜色</span><div class="cht-color-row"><input type="color" data-s="mouseEffectColor" value="#ffffff" class="cht-cpick"><span class="cht-hex">#ffffff</span></div></div>
+                <div class="cht-field"><span class="cht-label">大小 <em>8</em>px</span><input type="range" class="cht-slider" min="3" max="20" value="8" data-s="mouseEffectSize"></div>
+
+                <div class="cht-section-title"><i class="fa-solid fa-share-nodes"></i> 特效分享</div>
+                <div class="cht-action-row">
+                    <button id="cht-export-effects" class="cht-btn"><i class="fa-solid fa-file-export"></i> 导出特效</button>
+                    <button id="cht-import-effects" class="cht-btn cht-btn-outline"><i class="fa-solid fa-file-import"></i> 导入特效</button>
+                    <input type="file" id="cht-import-effects-input" accept=".json" style="display:none">
+                </div>
+                <p class="cht-hint">导出/导入飘落特效和鼠标特效设置，方便与朋友分享。</p>
+
+                <div class="cht-section-title"><i class="fa-solid fa-spinner"></i> 加载画面</div>
+                <div class="cht-field"><span class="cht-label">背景色</span><div class="cht-color-row"><input type="color" data-s="preloaderBg" value="#000000" class="cht-cpick"><span class="cht-hex">#000000</span></div></div>
+                <div class="cht-field"><span class="cht-label">背景图URL</span><input type="text" placeholder="加载画面背景图..." data-s="preloaderBgUrl"></div>
+                <div class="cht-field"><span class="cht-label">加载图标URL</span><input type="text" placeholder="替换默认齿轮..." data-s="preloaderImgUrl"></div>
+                <div class="cht-field"><span class="cht-label">图标大小 <em>40</em>px</span><input type="range" class="cht-slider" min="20" max="120" value="40" data-s="preloaderImgSize"></div>
+                <p class="cht-hint">加载画面在下次刷新页面时生效。</p>
+            </div>
+
+            <!-- ======== 主题 ======== -->
+            <div class="cht-tab-content" data-panel="themes">
+                <div class="cht-section-title">主题信息</div>
+                <div class="cht-field"><span class="cht-label">名称</span><input type="text" id="cht-theme-name" placeholder="My Theme"></div>
+                <div class="cht-field"><span class="cht-label">作者</span><input type="text" id="cht-theme-author" placeholder="Your Name"></div>
+
+                <div class="cht-section-title">Raw Mode（导入主题透传）</div>
+                <div class="cht-check-row"><label><input type="checkbox" id="cht-raw-mode"> 开启 rawMode（导入的ST美化原样输出，不叠加插件配色）</label></div>
+                <p class="cht-hint">导入ST原生美化时自动开启。开启后只输出原始CSS变量和custom_css，关闭后使用插件配色系统。</p>
+
+                <div class="cht-section-title">保存与加载</div>
+                <div class="cht-action-row">
+                    <button id="cht-save-theme" class="cht-btn primary"><i class="fa-solid fa-floppy-disk"></i> 保存</button>
+                    <button id="cht-export-charites" class="cht-btn"><i class="fa-solid fa-file-export"></i> 导出</button>
+                    <button id="cht-export-st" class="cht-btn"><i class="fa-solid fa-file-export"></i> 导出ST</button>
+                </div>
+                <div class="cht-field"><span class="cht-label">已保存</span><select id="cht-saved-themes" class="cht-select"></select></div>
+                <div class="cht-action-row">
+                    <button id="cht-load-theme" class="cht-btn"><i class="fa-solid fa-folder-open"></i> 加载</button>
+                    <button id="cht-delete-theme" class="cht-btn danger"><i class="fa-solid fa-trash"></i> 删除</button>
+                    <button id="cht-import-file" class="cht-btn cht-btn-outline"><i class="fa-solid fa-file-import"></i> 导入</button>
+                    <input type="file" id="cht-import-input" accept=".json" style="display:none">
+                </div>
+                <p class="cht-hint">导入ST主题时自动开启rawMode + 智能提取图标/底栏/头像等设置。</p>
+                <div class="cht-footer-credit">
+                    <div class="cht-credit-line">Made with ♥ by <strong>SenriYuki</strong></div>
+                    <div class="cht-credit-line">Charites 美化工坊 v1.0.0</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

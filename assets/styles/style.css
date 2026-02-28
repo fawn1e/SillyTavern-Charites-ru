@@ -1,0 +1,389 @@
+/**
+ * Charites 美化工坊 - Plugin Panel Styles
+ * Author: SenriYuki
+ * CSS隔离模式照搬自 Horae
+ */
+
+/* === 变量定义 === */
+#charites_drawer,
+.cht-modal {
+    --cht-primary: #8b5cf6;
+    --cht-primary-light: #a78bfa;
+    --cht-primary-dark: #6d28d9;
+    --cht-accent: #f59e0b;
+    --cht-success: #10b981;
+    --cht-danger: #ef4444;
+
+    --cht-bg: #1e1e28;
+    --cht-bg2: #2d2d3c;
+    --cht-bg-hover: #3c3c50;
+    --cht-border: rgba(255,255,255,0.1);
+    --cht-text: #e5e5e5;
+    --cht-text-muted: #a0a0a0;
+
+    --cht-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    --cht-radius: 8px;
+    --cht-radius-sm: 4px;
+}
+
+/* 浅色模式 */
+#charites_drawer.cht-light,
+.cht-modal.cht-light {
+    --cht-bg: #f4f4f8;
+    --cht-bg2: #e8e8f0;
+    --cht-bg-hover: #d8d8e4;
+    --cht-border: rgba(0,0,0,0.1);
+    --cht-text: #1e1e28;
+    --cht-text-muted: #666;
+    --cht-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* === 输入框隔离 === */
+#charites_drawer input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="range"]),
+#charites_drawer textarea,
+#charites_drawer select,
+.cht-modal input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="range"]),
+.cht-modal textarea,
+.cht-modal select {
+    background: var(--cht-bg) !important;
+    color: var(--cht-text) !important;
+    border-color: var(--cht-border) !important;
+    border: 1px solid var(--cht-border) !important;
+    border-radius: var(--cht-radius-sm);
+    padding: 5px 8px;
+    font-size: 12px;
+    outline: none;
+}
+#charites_drawer input:focus,
+.cht-modal input:focus {
+    border-color: var(--cht-primary) !important;
+}
+
+/* Checkbox隔离 */
+#charites_drawer input[type="checkbox"],
+.cht-modal input[type="checkbox"] {
+    cursor: pointer;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+/* Range slider */
+#charites_drawer input[type="range"] {
+    -webkit-appearance: auto !important;
+    appearance: auto !important;
+    accent-color: var(--cht-primary);
+    background: transparent !important;
+    border: none !important;
+}
+
+/* === 面板主体 === */
+#charites_drawer .cht-panel {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: var(--cht-text);
+    background: var(--cht-bg);
+}
+
+/* === Header === */
+#charites_drawer .cht-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: linear-gradient(135deg, var(--cht-primary-dark), var(--cht-primary));
+    color: white;
+    position: sticky; top: 0; z-index: 10;
+}
+#charites_drawer .cht-title { font-weight: 700; font-size: 14px; }
+#charites_drawer .cht-version { font-size: 10px; background: rgba(255,255,255,0.2); padding: 1px 6px; border-radius: 8px; }
+#charites_drawer .cht-header-actions { margin-left: auto; display: flex; gap: 4px; }
+
+#charites_drawer .cht-icon-btn {
+    background: rgba(255,255,255,0.15); border: none; color: white;
+    width: 26px; height: 26px; border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
+}
+#charites_drawer .cht-icon-btn:hover { background: rgba(255,255,255,0.3); }
+#charites_drawer .cht-icon-btn.active { background: rgba(255,255,255,0.4); }
+
+/* === Tabs === */
+#charites_drawer .cht-tabs {
+    display: flex; flex-wrap: wrap; gap: 2px;
+    padding: 6px 8px; background: var(--cht-bg);
+    border-bottom: 1px solid var(--cht-border);
+    position: sticky; top: 42px; z-index: 9;
+}
+#charites_drawer .cht-tab {
+    flex: 1; min-width: 55px; padding: 6px 2px; font-size: 11px;
+    border: none; background: transparent; color: var(--cht-text-muted);
+    cursor: pointer; border-radius: var(--cht-radius);
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    transition: background 0.2s, color 0.2s;
+}
+#charites_drawer .cht-tab i { font-size: 13px; }
+#charites_drawer .cht-tab:hover { background: var(--cht-bg2); color: var(--cht-text); }
+#charites_drawer .cht-tab.active { background: var(--cht-primary); color: white; }
+
+/* === Tab Content === */
+#charites_drawer .cht-tab-content { display: none; padding: 10px 12px 24px; }
+#charites_drawer .cht-tab-content.active { display: block; }
+
+/* === Section Title === */
+#charites_drawer .cht-section-title {
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--cht-primary-light);
+    margin: 14px 0 8px; padding-bottom: 4px;
+    border-bottom: 1px solid var(--cht-border);
+}
+#charites_drawer .cht-section-title:first-child { margin-top: 4px; }
+
+/* === Toggle/Collapse === */
+#charites_drawer .cht-toggle {
+    cursor: pointer; user-select: none;
+    display: flex; align-items: center; gap: 6px;
+}
+#charites_drawer .cht-toggle:hover { color: var(--cht-text); }
+#charites_drawer .cht-toggle .cht-arrow { margin-left: auto; font-size: 10px; transition: transform 0.2s; }
+
+/* === Field Row === */
+#charites_drawer .cht-field {
+    display: flex; align-items: center; gap: 8px;
+    padding: 5px 0; min-height: 28px;
+}
+#charites_drawer .cht-label {
+    font-size: 12px; color: var(--cht-text-muted); min-width: 75px; flex-shrink: 0;
+}
+#charites_drawer .cht-label em {
+    font-style: normal; color: var(--cht-primary-light); margin-left: 4px;
+}
+
+/* === Hue Bar === */
+#charites_drawer .cht-hue-bar {
+    flex: 1; height: 22px; border-radius: 11px; cursor: pointer;
+    position: relative;
+    background: linear-gradient(to right,
+        hsl(0,100%,50%), hsl(30,100%,50%), hsl(60,100%,50%), hsl(90,100%,50%),
+        hsl(120,100%,50%), hsl(150,100%,50%), hsl(180,100%,50%), hsl(210,100%,50%),
+        hsl(240,100%,50%), hsl(270,100%,50%), hsl(300,100%,50%), hsl(330,100%,50%),
+        hsl(360,100%,50%));
+    border: 1px solid var(--cht-border);
+}
+#charites_drawer .cht-hue-ind {
+    position: absolute; top: -2px; width: 14px; height: 26px;
+    border-radius: 4px; border: 2px solid white;
+    box-shadow: 0 0 4px rgba(0,0,0,0.5);
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/* === Sliders === */
+#charites_drawer .cht-slider {
+    flex: 1; min-width: 80px;
+}
+#charites_drawer .cht-daynight {
+    background: linear-gradient(to right, #1a1a2e, #6366f1, #f8fafc) !important;
+    border-radius: 6px !important;
+    height: 6px;
+}
+
+/* === Color Row === */
+#charites_drawer .cht-color-row {
+    display: flex; align-items: center; gap: 8px;
+}
+#charites_drawer .cht-cpick {
+    width: 28px; height: 28px; border: 2px solid var(--cht-border);
+    border-radius: 4px; padding: 0; cursor: pointer; background: none; flex-shrink: 0;
+}
+#charites_drawer .cht-cpick::-webkit-color-swatch-wrapper { padding: 1px; }
+#charites_drawer .cht-cpick::-webkit-color-swatch { border: none; border-radius: 2px; }
+#charites_drawer .cht-hex {
+    font-size: 11px; color: var(--cht-text-muted); font-family: monospace;
+}
+
+/* === Swatches === */
+#charites_drawer .cht-swatches {
+    display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px;
+}
+#charites_drawer .cht-swatch {
+    width: 28px; height: 28px; border-radius: 4px;
+    border: 1px solid var(--cht-border); cursor: help;
+    transition: transform 0.15s;
+}
+#charites_drawer .cht-swatch:hover { transform: scale(1.2); z-index: 1; }
+
+/* === Fine-tune Row === */
+#charites_drawer .cht-fine-row {
+    display: flex; align-items: center; gap: 6px;
+    padding: 3px 0; font-size: 12px;
+}
+#charites_drawer .cht-fine-row > span:first-child {
+    min-width: 65px; color: var(--cht-text-muted);
+}
+#charites_drawer .cht-fine-cpick {
+    width: 24px; height: 24px; border: 1px solid var(--cht-border);
+    border-radius: 4px; padding: 0; cursor: pointer; background: none;
+}
+#charites_drawer .cht-fine-hex { font-size: 11px; color: var(--cht-text-muted); font-family: monospace; }
+
+/* === Image Group === */
+#charites_drawer .cht-img-group {
+    margin-bottom: 12px; padding: 8px; background: var(--cht-bg2);
+    border-radius: var(--cht-radius-sm);
+}
+#charites_drawer .cht-img-label { font-size: 12px; font-weight: 600; color: var(--cht-text); margin-bottom: 6px; }
+#charites_drawer .cht-img-ctrl {
+    display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 11px; color: var(--cht-text-muted);
+}
+#charites_drawer .cht-img-preview {
+    max-width: 100%; max-height: 60px; margin-top: 6px;
+    border-radius: var(--cht-radius-sm); object-fit: cover;
+}
+
+/* === Buttons === */
+#charites_drawer .cht-btn {
+    padding: 7px 14px; border: 1px solid var(--cht-border);
+    background: var(--cht-bg2); color: var(--cht-text);
+    border-radius: var(--cht-radius); cursor: pointer; font-size: 12px;
+    display: inline-flex; align-items: center; gap: 5px;
+    transition: background 0.2s;
+}
+#charites_drawer .cht-btn:hover { background: var(--cht-bg-hover); }
+#charites_drawer .cht-btn.primary {
+    background: linear-gradient(135deg, var(--cht-primary-dark), var(--cht-primary));
+    border-color: var(--cht-primary); color: white;
+}
+#charites_drawer .cht-btn.primary:hover { filter: brightness(1.1); }
+#charites_drawer .cht-btn.danger { background: var(--cht-danger); border-color: var(--cht-danger); color: white; }
+#charites_drawer .cht-btn-outline {
+    background: transparent; border: 1px dashed var(--cht-primary); color: var(--cht-primary-light);
+}
+
+/* === Option Button Group === */
+#charites_drawer .cht-opt-group { display: flex; gap: 4px; flex-wrap: wrap; }
+#charites_drawer .cht-opt-group-col { flex-direction: column; }
+#charites_drawer .cht-opt-btn {
+    flex: 1; padding: 6px 10px; border: 1px solid var(--cht-border);
+    background: var(--cht-bg2); color: var(--cht-text-muted);
+    border-radius: var(--cht-radius); cursor: pointer; font-size: 12px; text-align: center;
+    transition: all 0.2s;
+}
+#charites_drawer .cht-opt-btn:hover { border-color: var(--cht-primary); color: var(--cht-text); }
+#charites_drawer .cht-opt-btn.active { background: var(--cht-primary); border-color: var(--cht-primary); color: white; }
+
+/* === Check Row === */
+#charites_drawer .cht-check-row { padding: 3px 0; }
+#charites_drawer .cht-check-row label {
+    font-size: 12px; color: var(--cht-text); cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+}
+
+/* === Action Row === */
+#charites_drawer .cht-action-row { display: flex; gap: 6px; margin: 8px 0; flex-wrap: wrap; }
+
+/* === Select === */
+#charites_drawer .cht-select {
+    width: 100%; padding: 5px 8px; font-size: 12px;
+}
+
+/* === Textarea === */
+#charites_drawer .cht-textarea {
+    width: 100%; padding: 8px; font-size: 11px; font-family: 'Consolas', monospace;
+    resize: vertical; min-height: 80px; box-sizing: border-box;
+}
+
+/* === Lock Button === */
+#charites_drawer .cht-lock-btn {
+    width: 28px; height: 28px; border: 1px solid var(--cht-border);
+    background: transparent; color: var(--cht-text-muted);
+    border-radius: 4px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: 11px;
+}
+#charites_drawer .cht-lock-btn.locked { background: #f59e0b; border-color: #f59e0b; color: white; }
+
+/* === Icon List === */
+#charites_drawer .cht-icon-list { display: flex; flex-direction: column; gap: 5px; }
+#charites_drawer .cht-icon-entry {
+    display: flex; align-items: center; gap: 8px;
+    padding: 5px 8px; background: var(--cht-bg2); border-radius: var(--cht-radius-sm);
+    border: 1px solid var(--cht-border);
+}
+#charites_drawer .cht-icon-preview {
+    width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--cht-text); flex-shrink: 0;
+    background: var(--cht-bg-hover); border-radius: 4px; overflow: hidden;
+}
+#charites_drawer .cht-icon-preview img { width: 100%; height: 100%; object-fit: contain; }
+#charites_drawer .cht-icon-name { font-size: 11px; color: var(--cht-text); min-width: 65px; flex-shrink: 0; }
+#charites_drawer .cht-icon-entry input { flex: 1 !important; }
+#charites_drawer .cht-icon-remove {
+    width: 20px; height: 20px; border: none; background: transparent;
+    color: var(--cht-danger); cursor: pointer; font-size: 12px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; border-radius: 50%;
+}
+#charites_drawer .cht-icon-remove:hover { background: rgba(239,68,68,0.2); }
+
+/* === Hint === */
+#charites_drawer .cht-hint { font-size: 11px; color: var(--cht-text-muted); margin: 6px 0; line-height: 1.5; }
+
+/* === Footer === */
+#charites_drawer .cht-footer-credit {
+    text-align: center; padding: 16px 0 8px; margin-top: 20px;
+    border-top: 1px solid var(--cht-border);
+}
+#charites_drawer .cht-credit-line { font-size: 11px; color: var(--cht-text-muted); line-height: 1.6; }
+#charites_drawer .cht-credit-line strong { color: var(--cht-primary-light); }
+
+/* === Preview Box === */
+#charites_drawer .cht-preview-box {
+    padding: 12px; background: var(--cht-bg2); border-radius: var(--cht-radius);
+    display: flex; align-items: center; justify-content: center; margin: 8px 0;
+}
+
+/* === Color Input Row === */
+#charites_drawer .cht-color-row {
+    display: flex; align-items: center; gap: 8px;
+}
+#charites_drawer .cht-color-row .cht-cpick {
+    width: 28px; height: 28px; border: 2px solid var(--cht-border);
+    border-radius: 4px; padding: 0; cursor: pointer; background: none; flex-shrink: 0;
+}
+#charites_drawer .cht-color-row .cht-cpick::-webkit-color-swatch-wrapper { padding: 1px; }
+#charites_drawer .cht-color-row .cht-cpick::-webkit-color-swatch { border: none; border-radius: 2px; }
+#charites_drawer .cht-color-row .cht-hex {
+    font-size: 11px; color: var(--cht-text-muted); font-family: monospace;
+}
+
+/* === Bar Color Picker + Alpha === */
+#charites_drawer .cht-bar-color {
+    margin-bottom: 8px;
+}
+#charites_drawer .cht-bar-color .cht-label {
+    display: block; font-size: 12px; color: var(--cht-text); margin-bottom: 4px;
+}
+#charites_drawer .cht-bar-color-row {
+    display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+}
+#charites_drawer .cht-bar-cpick {
+    width: 32px; height: 32px; border: 2px solid var(--cht-border);
+    border-radius: 4px; padding: 0; cursor: pointer; background: none; flex-shrink: 0;
+}
+#charites_drawer .cht-bar-cpick::-webkit-color-swatch-wrapper { padding: 1px; }
+#charites_drawer .cht-bar-cpick::-webkit-color-swatch { border: none; border-radius: 2px; }
+#charites_drawer .cht-bar-alpha-label {
+    font-size: 11px; color: var(--cht-text-muted); white-space: nowrap; min-width: 70px;
+}
+#charites_drawer .cht-bar-alpha {
+    flex: 1; min-width: 60px;
+}
+
+/* === Effects Tab Extras === */
+#charites_drawer .cht-section-title i {
+    margin-right: 4px;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    #charites_drawer .cht-label { min-width: 60px; font-size: 11px; }
+    #charites_drawer .cht-tab { font-size: 10px; padding: 5px 2px; min-width: 45px; }
+    #charites_drawer .cht-tab i { font-size: 12px; }
+}

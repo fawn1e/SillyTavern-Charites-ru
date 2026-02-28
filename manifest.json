@@ -1,0 +1,12 @@
+{
+    "display_name": "Charites - 美化工坊",
+    "loading_order": 101,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "assets/styles/style.css",
+    "author": "SenriYuki",
+    "version": "1.0.0",
+    "homePage": "",
+    "auto_update": false
+}
