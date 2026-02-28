@@ -1,5 +1,7 @@
 # Charites - 美化工坊 ✨
 
+![Image](https://raw.githubusercontent.com/SenriYuki/SillyTavern-Charites/refs/heads/main/CharitesLogo.png)
+
 **SillyTavern 可视化主题定制插件** — 不懂代码也能轻松 DIY 属于自己的酒馆美化。
 
 > Charites（卡律忒斯）— 希腊神话中掌管美丽与优雅的三女神。
