@@ -8,7 +8,7 @@ import { getSlideToggleOptions, saveSettingsDebounced } from '/script.js';
 import { slideToggle } from '/lib.js';
 
 const EXTENSION_NAME = 'charites';
-const VERSION = '1.0.0';
+const VERSION = '1.0.1';
 const EXTENSION_FOLDER = 'third-party/SillyTavern-Charites';
 const TEMPLATE_PATH = `${EXTENSION_FOLDER}/assets/templates`;
 const STYLE_ID = 'charites-theme-preview';
@@ -34,8 +34,8 @@ const OLD_TOP_ICONS = [
     { id: 'fa-plug', name: 'API连接', selector: '.drawer-icon.fa-plug', fa: 'fa-solid fa-plug' },
     { id: 'fa-font', name: 'AI格式化', selector: '.drawer-icon.fa-font', fa: 'fa-solid fa-font' },
     { id: 'fa-book-atlas', name: '世界信息', selector: '.drawer-icon.fa-book-atlas', fa: 'fa-solid fa-book-atlas' },
-    { id: 'fa-user', name: '用户设置', selector: '.drawer-icon.fa-user', fa: 'fa-solid fa-user' },
-    { id: 'fa-image', name: '背景图', selector: '.drawer-icon.fa-image', fa: 'fa-solid fa-image' },
+    { id: 'fa-user', name: '用户设置', selector: '.drawer-icon.fa-fw', fa: 'fa-solid fa-user' },
+    { id: 'fa-image', name: '背景图', selector: '.drawer-icon.fa-cubes', fa: 'fa-solid fa-image' },
     { id: 'fa-cubes', name: '扩展', selector: '.drawer-icon.fa-cubes', fa: 'fa-solid fa-cubes' },
     { id: 'fa-bars-progress', name: '数据管理', selector: '.drawer-icon.fa-bars-progress', fa: 'fa-solid fa-bars-progress' },
     { id: 'fa-face-smile', name: '角色管理', selector: '.drawer-icon.fa-face-smile', fa: 'fa-solid fa-face-smile' },
@@ -47,8 +47,8 @@ const NEW_TOP_ICONS = [
     { id: 'n-formatting', name: '格式化', selector: '#formatting_settings .drawer-icon, .drawer-icon.fa-font', fa: 'fa-solid fa-font' },
     { id: 'n-worldinfo', name: '世界信息', selector: '#world_info .drawer-icon, .drawer-icon.fa-book-atlas', fa: 'fa-solid fa-book-atlas' },
     { id: 'n-persona', name: '角色管理', selector: '#persona_drawer .drawer-icon, .drawer-icon.fa-face-smile', fa: 'fa-solid fa-face-smile' },
-    { id: 'n-user', name: '用户设置', selector: '#user_settings .drawer-icon, .drawer-icon.fa-user', fa: 'fa-solid fa-user' },
-    { id: 'n-backgrounds', name: '背景图', selector: '#backgrounds_settings .drawer-icon, .drawer-icon.fa-image', fa: 'fa-solid fa-image' },
+    { id: 'n-user', name: '用户设置', selector: '#user_settings .drawer-icon, .drawer-icon.fa-user-cog', fa: 'fa-solid fa-user' },
+    { id: 'n-backgrounds', name: '背景图', selector: '#backgrounds_settings .drawer-icon, .drawer-icon.fa-panorama', fa: 'fa-solid fa-panorama' },
     { id: 'n-extensions', name: '扩展', selector: '#extensions_settings .drawer-icon, .drawer-icon.fa-cubes', fa: 'fa-solid fa-cubes' },
     { id: 'n-data', name: '数据管理', selector: '#data_management .drawer-icon, .drawer-icon.fa-bars-progress', fa: 'fa-solid fa-bars-progress' },
     { id: 'n-charcard', name: '角色卡', selector: '#character_info .drawer-icon, .drawer-icon.fa-address-card', fa: 'fa-solid fa-address-card' },
