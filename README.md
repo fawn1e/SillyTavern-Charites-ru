@@ -1,7 +1,7 @@
 # Important Note
 This is a Russian translation/localization for the Russian-speaking community. 
 I didn't touch the code — only translated the text for Russian-speaking users. 
-If you're an author: your work is really helpful and insipiring, thank you so much for creating it. If anything looks wrong or if you'd like me to change something, please reach out to me on Telegram: @fawn1e
+If you're an author: your extension is really helpful and inspiring — thank you so much for creating it!. If anything looks wrong or if you'd like me to change something, please reach out to me on Telegram: @fawn1e
 
 # Charites — Мастерская стилей ✨
 
