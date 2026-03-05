@@ -21,7 +21,7 @@ async function initNavbarFunction() {
     try {
         const scriptModule = await import('/script.js');
         if (scriptModule.doNavbarIconClick) doNavbarIconClick = scriptModule.doNavbarIconClick;
-    } catch (e) { console.warn('[Charites] doNavbarIconClick 不可用'); }
+    } catch (e) { console.warn('[Charites] doNavbarIconClick недоступен'); }
 }
 
 async function getTemplate(name) { return await renderExtensionTemplateAsync(TEMPLATE_PATH, name); }
@@ -30,42 +30,42 @@ async function getTemplate(name) { return await renderExtensionTemplateAsync(TEM
 // Icon Definitions
 // =====================
 const OLD_TOP_ICONS = [
-    { id: 'fa-sliders', name: 'AI响应配置', selector: '.drawer-icon.fa-sliders', fa: 'fa-solid fa-sliders' },
-    { id: 'fa-plug', name: 'API连接', selector: '.drawer-icon.fa-plug', fa: 'fa-solid fa-plug' },
-    { id: 'fa-font', name: 'AI格式化', selector: '.drawer-icon.fa-font', fa: 'fa-solid fa-font' },
-    { id: 'fa-book-atlas', name: '世界信息', selector: '.drawer-icon.fa-book-atlas', fa: 'fa-solid fa-book-atlas' },
-    { id: 'fa-user', name: '用户设置', selector: '.drawer-icon.fa-fw', fa: 'fa-solid fa-user' },
-    { id: 'fa-image', name: '背景图', selector: '.drawer-icon.fa-fw', fa: 'fa-solid fa-image' },
-    { id: 'fa-cubes', name: '扩展', selector: '.drawer-icon.fa-cubes', fa: 'fa-solid fa-cubes' },
-    { id: 'fa-bars-progress', name: '数据管理', selector: '.drawer-icon.fa-bars-progress', fa: 'fa-solid fa-bars-progress' },
-    { id: 'fa-face-smile', name: '角色管理', selector: '.drawer-icon.fa-face-smile', fa: 'fa-solid fa-face-smile' },
-    { id: 'fa-address-card', name: '角色卡', selector: '.drawer-icon.fa-address-card', fa: 'fa-solid fa-address-card' },
+    { id: 'fa-sliders', name: 'Настройки AI', selector: '.drawer-icon.fa-sliders', fa: 'fa-solid fa-sliders' },
+    { id: 'fa-plug', name: 'Подключения API', selector: '.drawer-icon.fa-plug', fa: 'fa-solid fa-plug' },
+    { id: 'fa-font', name: 'Форматирование', selector: '.drawer-icon.fa-font', fa: 'fa-solid fa-font' },
+    { id: 'fa-book-atlas', name: 'Мир', selector: '.drawer-icon.fa-book-atlas', fa: 'fa-solid fa-book-atlas' },
+    { id: 'fa-user', name: 'Настройки', selector: '.drawer-icon.fa-fw', fa: 'fa-solid fa-user' },
+    { id: 'fa-image', name: 'Фон', selector: '.drawer-icon.fa-fw', fa: 'fa-solid fa-image' },
+    { id: 'fa-cubes', name: 'Расширения', selector: '.drawer-icon.fa-cubes', fa: 'fa-solid fa-cubes' },
+    { id: 'fa-bars-progress', name: 'Управление данными', selector: '.drawer-icon.fa-bars-progress', fa: 'fa-solid fa-bars-progress' },
+    { id: 'fa-face-smile', name: 'Управление персонажами', selector: '.drawer-icon.fa-face-smile', fa: 'fa-solid fa-face-smile' },
+    { id: 'fa-address-card', name: 'Карточка', selector: '.drawer-icon.fa-address-card', fa: 'fa-solid fa-address-card' },
 ];
 const NEW_TOP_ICONS = [
-    { id: 'n-completions', name: 'AI响应', selector: '#completions_settings .drawer-icon, .drawer-icon.fa-sliders', fa: 'fa-solid fa-sliders' },
-    { id: 'n-connections', name: 'API连接', selector: '#connections_settings .drawer-icon, .drawer-icon.fa-plug', fa: 'fa-solid fa-plug' },
-    { id: 'n-formatting', name: '格式化', selector: '#formatting_settings .drawer-icon, .drawer-icon.fa-font', fa: 'fa-solid fa-font' },
-    { id: 'n-worldinfo', name: '世界信息', selector: '#world_info .drawer-icon, .drawer-icon.fa-book-atlas', fa: 'fa-solid fa-book-atlas' },
-    { id: 'n-persona', name: '角色管理', selector: '#persona_drawer .drawer-icon, .drawer-icon.fa-face-smile', fa: 'fa-solid fa-face-smile' },
-    { id: 'n-user', name: '用户设置', selector: '#user_settings .drawer-icon, .drawer-icon.fa-user-cog', fa: 'fa-solid fa-user' },
-    { id: 'n-backgrounds', name: '背景图', selector: '#backgrounds_settings .drawer-icon, .drawer-icon.fa-panorama', fa: 'fa-solid fa-panorama' },
-    { id: 'n-extensions', name: '扩展', selector: '#extensions_settings .drawer-icon, .drawer-icon.fa-cubes', fa: 'fa-solid fa-cubes' },
-    { id: 'n-data', name: '数据管理', selector: '#data_management .drawer-icon, .drawer-icon.fa-bars-progress', fa: 'fa-solid fa-bars-progress' },
-    { id: 'n-charcard', name: '角色卡', selector: '#character_info .drawer-icon, .drawer-icon.fa-address-card', fa: 'fa-solid fa-address-card' },
+    { id: 'n-completions', name: 'AI ответы', selector: '#completions_settings .drawer-icon, .drawer-icon.fa-sliders', fa: 'fa-solid fa-sliders' },
+    { id: 'n-connections', name: 'Подключения API', selector: '#connections_settings .drawer-icon, .drawer-icon.fa-plug', fa: 'fa-solid fa-plug' },
+    { id: 'n-formatting', name: 'Форматирование', selector: '#formatting_settings .drawer-icon, .drawer-icon.fa-font', fa: 'fa-solid fa-font' },
+    { id: 'n-worldinfo', name: 'Информация о мире', selector: '#world_info .drawer-icon, .drawer-icon.fa-book-atlas', fa: 'fa-solid fa-book-atlas' },
+    { id: 'n-persona', name: 'Управление персонажами', selector: '#persona_drawer .drawer-icon, .drawer-icon.fa-face-smile', fa: 'fa-solid fa-face-smile' },
+    { id: 'n-user', name: 'Настройки', selector: '#user_settings .drawer-icon, .drawer-icon.fa-user-cog', fa: 'fa-solid fa-user' },
+    { id: 'n-backgrounds', name: 'Фон', selector: '#backgrounds_settings .drawer-icon, .drawer-icon.fa-panorama', fa: 'fa-solid fa-panorama' },
+    { id: 'n-extensions', name: 'Расширения', selector: '#extensions_settings .drawer-icon, .drawer-icon.fa-cubes', fa: 'fa-solid fa-cubes' },
+    { id: 'n-data', name: 'Управление данными', selector: '#data_management .drawer-icon, .drawer-icon.fa-bars-progress', fa: 'fa-solid fa-bars-progress' },
+    { id: 'n-charcard', name: 'Карточка персонажа', selector: '#character_info .drawer-icon, .drawer-icon.fa-address-card', fa: 'fa-solid fa-address-card' },
 ];
 const BOTTOM_ICONS = [
-    { id: 'options_button', name: '菜单', selector: '#options_button', fa: 'fa-solid fa-bars' },
-    { id: 'extensionsMenuButton', name: '扩展菜单', selector: '#extensionsMenuButton', fa: 'fa-solid fa-cubes' },
-    { id: 'send_but', name: '发送', selector: '#send_but', fa: 'fa-solid fa-paper-plane' },
-    { id: 'mes_stop', name: '停止', selector: '#mes_stop', fa: 'fa-solid fa-stop' },
-    { id: 'qr_rocket', name: '快速回复', selector: '#quick-reply-rocket-button', fa: 'fa-solid fa-rocket' },
+    { id: 'options_button', name: 'Меню', selector: '#options_button', fa: 'fa-solid fa-bars' },
+    { id: 'extensionsMenuButton', name: 'Меню расширений', selector: '#extensionsMenuButton', fa: 'fa-solid fa-cubes' },
+    { id: 'send_but', name: 'Отправить', selector: '#send_but', fa: 'fa-solid fa-paper-plane' },
+    { id: 'mes_stop', name: 'Остановить', selector: '#mes_stop', fa: 'fa-solid fa-stop' },
+    { id: 'qr_rocket', name: 'Быстрый ответ', selector: '#quick-reply-rocket-button', fa: 'fa-solid fa-rocket' },
 ];
 const FINE_VARS = [
-    ['mainText', '主文字'], ['italicsText', '斜体/强调'], ['quoteText', '对话引用'],
-    ['underlineText', '下划线'], ['blurTint', '面板底色'], ['chatTint', '聊天区底色'],
-    ['userBubble', '用户气泡'], ['botBubble', 'AI气泡'], ['sendFormBg', '底栏背景'],
-    ['topBarBg', '顶栏背景'], ['drawerBg', '抽屉面板背景'],
-    ['shadow', '阴影色'], ['primary', '主色调'], ['primaryLight', '主色亮'],
+    ['mainText', 'Основной текст'], ['italicsText', 'Курсив/Акцент'], ['quoteText', 'Цитата'],
+    ['underlineText', 'Подчеркивание'], ['blurTint', 'Цвет панели'], ['chatTint', 'Цвет чата'],
+    ['userBubble', 'Облако пользователя'], ['botBubble', 'Облако AI'], ['sendFormBg', 'Фон нижней панели'],
+    ['topBarBg', 'Фон верхней панели'], ['drawerBg', 'Фон боковой панели'],
+    ['shadow', 'Цвет тени'], ['primary', 'Основной цвет'], ['primaryLight', 'Светлый основной цвет'],
 ];
 
 function escHtml(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -805,8 +805,8 @@ function initColorSystem() {
     satSl.addEventListener('input', function () { settings.sat = +this.value; d.querySelector('#cht-sat-v').textContent = settings.sat; settings.overrides = {}; onColorChange(); });
     const clSl = d.querySelector('#cht-cl'); clSl.value = settings.colorLight; d.querySelector('#cht-cl-v').textContent = settings.colorLight;
     clSl.addEventListener('input', function () { settings.colorLight = +this.value; d.querySelector('#cht-cl-v').textContent = settings.colorLight; settings.overrides = {}; onColorChange(); });
-    const briSl = d.querySelector('#cht-bri'); let lastBright = settings.bright; briSl.value = settings.bright; d.querySelector('#cht-bri-v').textContent = settings.bright <= 50 ? '夜' : '日';
-    briSl.addEventListener('input', function () { const v = +this.value; if (settings.locked && Object.keys(settings.overrides).length > 0) { if (!confirm('你已微调过颜色，拖动日夜条会重置，确定？')) { this.value = lastBright; return; } settings.overrides = {}; } settings.bright = v; lastBright = v; d.querySelector('#cht-bri-v').textContent = v <= 50 ? '夜' : '日'; onColorChange(); });
+    const briSl = d.querySelector('#cht-bri'); let lastBright = settings.bright; briSl.value = settings.bright; d.querySelector('#cht-bri-v').textContent = settings.bright <= 50 ? 'Ночь' : 'День';
+    briSl.addEventListener('input', function () { const v = +this.value; if (settings.locked && Object.keys(settings.overrides).length > 0) { if (!confirm('Вы уже настроили цвета. Перемещение ползунка дня/ночи сбросит их. Вы уверены?')) { this.value = lastBright; return; } settings.overrides = {}; } settings.bright = v; lastBright = v; d.querySelector('#cht-bri-v').textContent = v <= 50 ? 'Ночь' : 'День'; onColorChange(); });
     const lockBtn = d.querySelector('#cht-lock-daynight');
     function updateLockUI() { lockBtn.classList.toggle('locked', settings.locked); lockBtn.innerHTML = settings.locked ? '<i class="fa-solid fa-lock"></i>' : '<i class="fa-solid fa-lock-open"></i>'; }
     updateLockUI(); lockBtn.addEventListener('click', () => { settings.locked = !settings.locked; updateLockUI(); saveSettings(); });
@@ -865,7 +865,7 @@ function initCustomCss() { const d = document.getElementById('charites_drawer'),
 // Icons
 // =====================
 function renderIconList(container, icons, isRemovable) {
-    container.innerHTML = icons.map(icon => { const url = settings.iconUrls[icon.id] || ''; const pvHtml = url ? `<img src="${escHtml(url)}" style="width:100%;height:100%;object-fit:contain;">` : `<i class="${icon.fa}"></i>`; return `<div class="cht-icon-entry" data-icon-id="${icon.id}"><div class="cht-icon-preview" id="cht-ipv-${icon.id}">${pvHtml}</div><span class="cht-icon-name">${escHtml(icon.name)}</span><input type="text" value="${escHtml(url)}" placeholder="图标URL..." data-icon="${icon.id}">${isRemovable ? `<button class="cht-icon-remove" data-remove="${icon.id}" title="移除"><i class="fa-solid fa-xmark"></i></button>` : ''}</div>`; }).join('');
+    container.innerHTML = icons.map(icon => { const url = settings.iconUrls[icon.id] || ''; const pvHtml = url ? `<img src="${escHtml(url)}" style="width:100%;height:100%;object-fit:contain;">` : `<i class="${icon.fa}"></i>`; return `<div class="cht-icon-entry" data-icon-id="${icon.id}"><div class="cht-icon-preview" id="cht-ipv-${icon.id}">${pvHtml}</div><span class="cht-icon-name">${escHtml(icon.name)}</span><input type="text" value="${escHtml(url)}" placeholder="URL иконки..." data-icon="${icon.id}">${isRemovable ? `<button class="cht-icon-remove" data-remove="${icon.id}" title="Удалить"><i class="fa-solid fa-xmark"></i></button>` : ''}</div>`; }).join('');
     container.querySelectorAll('input[data-icon]').forEach(inp => { inp.addEventListener('change', function () { const id = this.dataset.icon, url = this.value.trim(); if (url) settings.iconUrls[id] = url; else delete settings.iconUrls[id]; const pv = container.querySelector(`#cht-ipv-${id}`); const icon = [...OLD_TOP_ICONS, ...NEW_TOP_ICONS, ...BOTTOM_ICONS, ...(settings.customIcons || [])].find(i => i.id === id); if (pv) pv.innerHTML = url ? `<img src="${escHtml(url)}" style="width:100%;height:100%;object-fit:contain;">` : `<i class="${icon?.fa || 'fa-solid fa-question'}"></i>`; applyPreview(); saveSettings(); }); });
     if (isRemovable) container.querySelectorAll('[data-remove]').forEach(btn => { btn.addEventListener('click', () => { const id = btn.dataset.remove; settings.customIcons = settings.customIcons.filter(i => i.id !== id); delete settings.iconUrls[id]; renderIconList(container, settings.customIcons, true); applyPreview(); saveSettings(); }); });
 }
@@ -873,7 +873,7 @@ function initIconControls() {
     const d = document.getElementById('charites_drawer');
     renderIconList(d.querySelector('#cht-icons-new'), NEW_TOP_ICONS, false); renderIconList(d.querySelector('#cht-icons-old'), OLD_TOP_ICONS, false);
     renderIconList(d.querySelector('#cht-icons-bottom'), BOTTOM_ICONS, false); renderIconList(d.querySelector('#cht-icons-custom'), settings.customIcons || [], true);
-    d.querySelector('#cht-add-custom-icon').addEventListener('click', () => { const sel = prompt('输入CSS选择器：'); if (!sel) return; const name = prompt('图标名称：') || sel; const id = 'custom_' + Date.now(); settings.customIcons.push({ id, name, selector: sel, fa: 'fa-solid fa-puzzle-piece' }); renderIconList(d.querySelector('#cht-icons-custom'), settings.customIcons, true); saveSettings(); });
+    d.querySelector('#cht-add-custom-icon').addEventListener('click', () => { const sel = prompt('Введите CSS селектор:'); if (!sel) return; const name = prompt('Название иконки:') || sel; const id = 'custom_' + Date.now(); settings.customIcons.push({ id, name, selector: sel, fa: 'fa-solid fa-puzzle-piece' }); renderIconList(d.querySelector('#cht-icons-custom'), settings.customIcons, true); saveSettings(); });
 }
 
 // =====================
@@ -936,9 +936,9 @@ function _parseSTCss(css, s) {
 // =====================
 function getSavedThemes() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch { return []; } }
 function setSavedThemes(arr) { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }
-function refreshThemeList() { const sel = document.querySelector('#cht-saved-themes'); if (!sel) return; const themes = getSavedThemes(); sel.innerHTML = themes.length === 0 ? '<option value="">（无保存的主题）</option>' : themes.map((t, i) => `<option value="${i}">${escHtml(t.name || '未命名')} - ${escHtml(t.author || '匿名')}</option>`).join(''); }
+function refreshThemeList() { const sel = document.querySelector('#cht-saved-themes'); if (!sel) return; const themes = getSavedThemes(); sel.innerHTML = themes.length === 0 ? '<option value="">(Нет сохраненных тем)</option>' : themes.map((t, i) => `<option value="${i}">${escHtml(t.name || 'Без имени')} - ${escHtml(t.author || 'Аноним')}</option>`).join(''); }
 function downloadJSON(data, filename) { const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = filename; a.click(); URL.revokeObjectURL(url); }
-function getExportData() { return { _charites: true, version: VERSION, name: settings.themeName || '未命名', author: settings.themeAuthor || '', settings: { ...settings } }; }
+function getExportData() { return { _charites: true, version: VERSION, name: settings.themeName || 'Без имени', author: settings.themeAuthor || '', settings: { ...settings } }; }
 function getSTExportData() {
     const c = generateColors(settings.hue, settings.sat, settings.bright, settings.colorLight); const merged = { ...c, ...settings.overrides };
     const uOp = (settings.userBubbleOpacity ?? 70) / 100, bOp = (settings.botBubbleOpacity ?? 20) / 100;
@@ -977,7 +977,7 @@ function importSTTheme(data) {
     const bA = String(data.bot_mes_blur_tint_color || '').match(/([\d.]+)\s*\)$/); if (bA) settings.botBubbleOpacity = Math.round(parseFloat(bA[1]) * 100);
 
     if (data.custom_css) { _parseSTCss(data.custom_css, settings); settings.customCss = data.custom_css; }
-    settings.themeName = data.name || '导入的ST主题';
+    settings.themeName = data.name || 'Импортированная ST тема';
     saveSettings(); syncAllToUI(); applyPreview(); return true;
 }
 
@@ -1003,16 +1003,16 @@ function initThemeControls() {
     nameInp.addEventListener('change', () => { settings.themeName = nameInp.value.trim(); saveSettings(); });
     authInp.addEventListener('change', () => { settings.themeAuthor = authInp.value.trim(); saveSettings(); });
 
-    d.querySelector('#cht-save-theme').addEventListener('click', () => { const themes = getSavedThemes(); themes.push(getExportData()); setSavedThemes(themes); refreshThemeList(); toastr.success('主题已保存'); });
-    d.querySelector('#cht-load-theme').addEventListener('click', () => { const sel = d.querySelector('#cht-saved-themes'); const idx = +sel.value; const themes = getSavedThemes(); if (!themes[idx]) return toastr.warning('请先选择一个主题'); importCharitesTheme(themes[idx]); toastr.success('主题已加载'); });
-    d.querySelector('#cht-delete-theme').addEventListener('click', () => { const sel = d.querySelector('#cht-saved-themes'); const idx = +sel.value; const themes = getSavedThemes(); if (!themes[idx]) return; if (!confirm(`删除「${themes[idx].name || '未命名'}」？`)) return; themes.splice(idx, 1); setSavedThemes(themes); refreshThemeList(); toastr.info('已删除'); });
+    d.querySelector('#cht-save-theme').addEventListener('click', () => { const themes = getSavedThemes(); themes.push(getExportData()); setSavedThemes(themes); refreshThemeList(); toastr.success('Тема сохранена'); });
+    d.querySelector('#cht-load-theme').addEventListener('click', () => { const sel = d.querySelector('#cht-saved-themes'); const idx = +sel.value; const themes = getSavedThemes(); if (!themes[idx]) return toastr.warning('Пожалуйста, сначала выберите тему'); importCharitesTheme(themes[idx]); toastr.success('Тема загружена'); });
+    d.querySelector('#cht-delete-theme').addEventListener('click', () => { const sel = d.querySelector('#cht-saved-themes'); const idx = +sel.value; const themes = getSavedThemes(); if (!themes[idx]) return; if (!confirm(`Удалить «${themes[idx].name || 'Без имени'}»?`)) return; themes.splice(idx, 1); setSavedThemes(themes); refreshThemeList(); toastr.info('Удалено'); });
     d.querySelector('#cht-export-charites').addEventListener('click', () => { downloadJSON(getExportData(), `charites-${settings.themeName || 'theme'}.json`); });
     d.querySelector('#cht-export-st').addEventListener('click', () => { downloadJSON(getSTExportData(), `${settings.themeName || 'charites-st-theme'}.json`); });
     d.querySelector('#cht-import-file').addEventListener('click', () => { d.querySelector('#cht-import-input').click(); });
     d.querySelector('#cht-import-input').addEventListener('change', function () {
         const file = this.files?.[0]; if (!file) return;
         const reader = new FileReader();
-        reader.onload = (e) => { try { const data = JSON.parse(e.target.result); if (data._charites_effects) { if (importEffectsData(data)) toastr.success('特效导入成功'); else toastr.error('导入失败'); } else if (data._charites) { if (importCharitesTheme(data)) toastr.success('Charites主题导入成功'); else toastr.error('导入失败'); } else if (data.main_text_color !== undefined) { if (importSTTheme(data)) toastr.success('ST主题导入成功（rawMode已开启，图标/底栏已智能提取）'); else toastr.error('导入失败'); } else { toastr.error('无法识别的主题格式'); } } catch { toastr.error('JSON解析失败'); } };
+        reader.onload = (e) => { try { const data = JSON.parse(e.target.result); if (data._charites_effects) { if (importEffectsData(data)) toastr.success('Эффекты успешно импортированы'); else toastr.error('Ошибка импорта'); } else if (data._charites) { if (importCharitesTheme(data)) toastr.success('Тема Charites успешно импортирована'); else toastr.error('Ошибка импорта'); } else if (data.main_text_color !== undefined) { if (importSTTheme(data)) toastr.success('ST тема успешно импортирована (rawMode включен, иконки/нижняя панель извлечены)'); else toastr.error('Ошибка импорта'); } else { toastr.error('Неизвестный формат темы'); } } catch { toastr.error('Ошибка парсинга JSON'); } };
         reader.readAsText(file); this.value = '';
     });
 
@@ -1024,14 +1024,14 @@ function initThemeControls() {
     const fxImport = d.querySelector('#cht-import-effects');
     if (fxImport) fxImport.addEventListener('click', () => { d.querySelector('#cht-import-effects-input')?.click(); });
     const fxInput = d.querySelector('#cht-import-effects-input');
-    if (fxInput) fxInput.addEventListener('change', function () { const file = this.files?.[0]; if (!file) return; const r = new FileReader(); r.onload = (e) => { try { const data = JSON.parse(e.target.result); if (importEffectsData(data)) toastr.success('特效导入成功'); else toastr.error('不是有效的特效文件'); } catch { toastr.error('JSON解析失败'); } }; r.readAsText(file); this.value = ''; });
+    if (fxInput) fxInput.addEventListener('change', function () { const file = this.files?.[0]; if (!file) return; const r = new FileReader(); r.onload = (e) => { try { const data = JSON.parse(e.target.result); if (importEffectsData(data)) toastr.success('Эффекты успешно импортированы'); else toastr.error('Недействительный файл эффектов'); } catch { toastr.error('Ошибка парсинга JSON'); } }; r.readAsText(file); this.value = ''; });
 }
 
 function initHeaderActions() {
     const d = document.getElementById('charites_drawer');
     const prevBtn = d.querySelector('#cht-toggle-preview'); prevBtn.classList.toggle('active', settings.previewEnabled);
     prevBtn.addEventListener('click', () => { settings.previewEnabled = !settings.previewEnabled; prevBtn.classList.toggle('active', settings.previewEnabled); if (settings.previewEnabled) applyPreview(); else removePreview(); saveSettings(); });
-    d.querySelector('#cht-reset-all').addEventListener('click', () => { if (!confirm('重置所有设置到默认值？')) return; Object.assign(settings, { ...DEFAULT_SETTINGS }); saveSettings(); syncAllToUI(); applyPreview(); toastr.info('已重置'); });
+    d.querySelector('#cht-reset-all').addEventListener('click', () => { if (!confirm('Сбросить все настройки по умолчанию?')) return; Object.assign(settings, { ...DEFAULT_SETTINGS }); saveSettings(); syncAllToUI(); applyPreview(); toastr.info('Сброшено'); });
 }
 
 // =====================
@@ -1092,13 +1092,13 @@ async function initDrawer() { const toggle = $('#charites_drawer .drawer-toggle'
 // Main Init
 // =====================
 jQuery(async () => {
-    console.log(`[Charites] 开始加载 v${VERSION}...`);
+    console.log(`[Charites] Начало загрузки v${VERSION}...`);
     await initNavbarFunction(); loadSettings();
     $('#extensions-settings-button').after(await getTemplate('drawer'));
-    const extHtml = `<div id="charites-ext-settings" class="inline-drawer" style="margin-top:4px;"><div class="inline-drawer-toggle inline-drawer-header"><b>Charites 美化工坊</b><div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div></div><div class="inline-drawer-content"><label class="checkbox_label" style="margin:6px 0;"><input type="checkbox" id="charites-ext-show-top-icon" ${settings.showTopIcon !== false ? 'checked' : ''}><span>显示顶部导航栏图标</span></label></div></div>`;
+    const extHtml = `<div id="charites-ext-settings" class="inline-drawer" style="margin-top:4px;"><div class="inline-drawer-toggle inline-drawer-header"><b>Charites Theme Customizer</b><div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div></div><div class="inline-drawer-content"><label class="checkbox_label" style="margin:6px 0;"><input type="checkbox" id="charites-ext-show-top-icon" ${settings.showTopIcon !== false ? 'checked' : ''}><span>Показывать иконку на верхней панели</span></label></div></div>`;
     $('#extensions_settings2').append(extHtml);
     $('#charites-ext-show-top-icon').on('change', function () { settings.showTopIcon = this.checked; saveSettings(); applyTopIconVisibility(); });
     await initDrawer(); initTabs(); initHeaderActions(); initColorSystem(); initRangeControls(); initTextControls(); initCheckboxControls(); initOptionButtons(); initColorInputs(); initBarColorControls(); initCustomCss(); initIconControls(); initThemeControls();
     syncAllToUI(); applyPreview(); applyTopIconVisibility();
-    console.log(`[Charites] v${VERSION} 加载完成！`);
+    console.log(`[Charites] v${VERSION} загружена!`);
 });
