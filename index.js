@@ -10,7 +10,7 @@ import { slideToggle } from '/lib.js';
 const EXTENSION_NAME = 'charites';
 const VERSION = '1.0.1';
 const EXTENSION_FOLDER = 'third-party/SillyTavern-Charites-ru';
-const TEMPLATE_PATH = `${EXTENSION_FOLDER}`; 
+const TEMPLATE_PATH = `${EXTENSION_FOLDER}/assets/templates`; 
 const STYLE_ID = 'charites-theme-preview';
 const STORAGE_KEY = 'charites_themes';
 
